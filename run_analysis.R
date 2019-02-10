@@ -35,7 +35,7 @@
       gather(key = "features", value = "value",-subject,-activity)%>%
       separate(features,c("feature","measure","direction"))%>%
       group_by(subject,activity,feature,measure,direction)%>%
-      summarize(mean = mean(value))%>%
-      View
+      summarize(mean = mean(value))
+      
 #Transfer tidydata to a file
-    #write.table(tidydata, "tidydata.txt", row.names=FALSE)
+    write.table(tidydata, "tidydata.txt", row.names=FALSE)
